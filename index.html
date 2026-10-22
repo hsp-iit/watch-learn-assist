@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!--
+    CUSTOMIZATION LEGEND
+    [MODIFIED]          Existing template block customized for this paper.
+    [ADDED]             New block introduced for this project.
+    [DISABLED FOR NOW]  Original template feature retained in a comment for possible future use.
+    To restore a disabled feature, remove the surrounding HTML comment and add the listed assets.
+  -->
+
+  <!--
+    SUMMARY OF CHANGES FROM THE BASE FILE
+
+    [MODIFIED]
+    - Page title, authors, affiliations, venue/status and all metadata.
+    - Resource buttons: arXiv, Paper and Video are inactive and marked "Coming soon".
+    - Teaser video, abstract, results, BibTeX and footer content.
+    - External/unused dependencies replaced by the local project stylesheet and script.
+
+    [ADDED]
+    - Project navigation.
+    - TL;DR and framework overview figure.
+    - Watch / Learn / Assist section.
+    - Interactive SR, PSR and participant cards.
+
+    [DISABLED FOR NOW, NOT DELETED]
+    - More Works dropdown.
+    - Supplementary and Code buttons.
+    - Detailed policy-architecture figure.
+    - Image carousel, YouTube presentation, video carousel and PDF poster.
+    - Scroll-to-top control and analytics.
+    - Optional favicon, carousel, slider and icon-library dependencies.
+  -->
+
+  <!-- [MODIFIED] Primary metadata: template placeholders replaced with paper information. -->
+  <meta name="title" content="Watch, Learn, Assist: Unlocking Autonomous Prosthetic Manipulation via Imitation Learning">
+  <meta name="description" content="A multimodal imitation-learning framework for autonomous wrist and finger control during prosthetic grasping and manipulation.">
+  <meta name="keywords" content="prosthetic manipulation, imitation learning, diffusion policy, multimodal learning, egocentric vision, assistive robotics">
+  <meta name="author" content="Martina Columbaro, Federico Vasile, Nicolò Boccardo, Lorenzo Natale">
+  <meta name="robots" content="index, follow">
+  <meta name="language" content="English">
+
+  <!-- [MODIFIED] Open Graph metadata. -->
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Istituto Italiano di Tecnologia">
+  <meta property="og:title" content="Watch, Learn, Assist">
+  <meta property="og:description" content="Unlocking autonomous prosthetic manipulation via imitation learning.">
+  <meta property="og:image" content="static/images/framework-overview.png">
+  <meta property="og:image:alt" content="Overview of the Watch, Learn, Assist framework">
+
+  <!-- [MODIFIED] Social preview metadata. -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Watch, Learn, Assist">
+  <meta name="twitter:description" content="Unlocking autonomous prosthetic manipulation via imitation learning.">
+  <meta name="twitter:image" content="static/images/framework-overview.png">
+
+  <!-- [MODIFIED] Academic metadata. -->
+  <meta name="citation_title" content="Watch, Learn, Assist: Unlocking Autonomous Prosthetic Manipulation via Imitation Learning">
+  <meta name="citation_author" content="Columbaro, Martina">
+  <meta name="citation_author" content="Vasile, Federico">
+  <meta name="citation_author" content="Boccardo, Nicolò">
+  <meta name="citation_author" content="Natale, Lorenzo">
+  <meta name="citation_publication_date" content="2026">
+
+  <!--
+    [DISABLED FOR NOW] Add these metadata fields once the public project URL,
+    paper PDF and social handles exist. Do not activate placeholder values.
+
+    <meta property="og:url" content="https://YOUR_DOMAIN.com/YOUR_PROJECT_PAGE">
+    <meta name="twitter:site" content="@YOUR_TWITTER_HANDLE">
+    <meta name="twitter:creator" content="@AUTHOR_TWITTER_HANDLE">
+    <meta name="citation_pdf_url" content="https://YOUR_DOMAIN.com/static/pdfs/paper.pdf">
+  -->
+
+  <meta name="theme-color" content="#ffffff">
+  <meta name="msapplication-TileColor" content="#2563eb">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+
+  <!-- Preconnect for performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://ajax.googleapis.com">
+  <link rel="preconnect" href="https://documentcloud.adobe.com">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  
+  
+  <title>Watch, Learn, Assist | Academic Project Page</title>
+
+  <!-- Favicon and App Icons -->
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <link rel="apple-touch-icon" href="static/images/favicon.ico">
+  
+  <!-- Critical CSS - Load synchronously -->
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+  
+  <!-- Non-critical CSS - Load asynchronously -->
+  <link rel="preload" href="static/css/bulma-carousel.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="static/css/bulma-slider.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="static/css/fontawesome.all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  
+  <!-- Fallback for browsers that don't support preload -->
+  <noscript>
+    <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+    <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  </noscript>
+  
+  <!-- Fonts - Optimized loading -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Defer non-critical JavaScript -->
+  <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script defer src="static/js/bulma-carousel.min.js"></script>
+  <script defer src="static/js/bulma-slider.min.js"></script>
+  <script defer src="static/js/index.js"></script>
+  
+  
+  <!-- [MODIFIED] Structured data: generic people and institutions replaced with the actual authors. -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ScholarlyArticle",
+    "headline": "Watch, Learn, Assist: Unlocking Autonomous Prosthetic Manipulation via Imitation Learning",
+    "description": "A multimodal imitation-learning framework for autonomous wrist and finger control during prosthetic grasping and manipulation.",
+    "author": [
+      {
+        "@type": "Person",
+        "name": "Martina Columbaro",
+        "affiliation": [
+          {"@type": "Organization", "name": "Italian Institute of Technology"},
+          {"@type": "Organization", "name": "University of Genoa"}
+        ]
+      },
+      {
+        "@type": "Person",
+        "name": "Federico Vasile",
+        "affiliation": {"@type": "Organization", "name": "Italian Institute of Technology"}
+      },
+      {
+        "@type": "Person",
+        "name": "Nicolò Boccardo",
+        "affiliation": {"@type": "Organization", "name": "Italian Institute of Technology"}
+      },
+      {
+        "@type": "Person",
+        "name": "Lorenzo Natale",
+        "affiliation": {"@type": "Organization", "name": "Italian Institute of Technology"}
+      }
+    ],
+    "dateCreated": "2026",
+    "keywords": [
+      "prosthetic manipulation",
+      "imitation learning",
+      "diffusion policy",
+      "multimodal learning",
+      "egocentric vision",
+      "assistive robotics"
+    ],
+    "isAccessibleForFree": true
+  }
+  </script>
+</head>
+
+<body>
+  <!-- [ADDED] Compact project navigation; the base template did not include this project-specific bar. -->
+  <nav class="navbar" role="navigation" aria-label="Project navigation">
+    <div class="container is-max-desktop">
+      <div class="navbar-brand">
+        <a class="navbar-item project-brand" href="#top">🦾 Watch, Learn, Assist</a>
+        <button class="navbar-burger" type="button" aria-label="Open navigation" aria-expanded="false" data-target="project-navbar">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </button>
+      </div>
+      <div id="project-navbar" class="navbar-menu">
+        <div class="navbar-end">
+          <a class="navbar-item" href="#abstract">Abstract</a>
+          <a class="navbar-item" href="#approach">How it works</a>
+          <a class="navbar-item" href="#results">Results</a>
+          <a class="navbar-item" href="#BibTeX">BibTeX</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+  
+  <!-- Scroll to Top Button -->
+  <button class="scroll-to-top" onclick="scrollToTop()" title="Scroll to top" aria-label="Scroll to top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <!--
+    [DISABLED FOR NOW] Original "More Works" dropdown.
+    It can be restored when related lab publications and final URLs are available.
+
+    <div class="more-works-container">
+      <button class="more-works-btn" type="button" onclick="toggleMoreWorks()">
+        More Works
+      </button>
+      <div class="more-works-dropdown" id="moreWorksDropdown">
+        <a href="RELATED_WORK_URL" class="work-item" target="_blank" rel="noopener">
+          <div class="work-info">
+            <h5>Related paper title</h5>
+            <p>Brief description of the work.</p>
+            <span class="work-venue">Conference or journal, year</span>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    Restoring this block also requires its original CSS and toggleMoreWorks()
+    JavaScript from the template.
+  -->
+
+  <!-- MAIN -->	
+  <main id="main-content">
+    <!-- [MODIFIED] Publication header: title, authors, affiliations and review status replaced. -->
+    <section class="hero" id="top">
+      <div class="hero-body publication-header">
+        <div class="container is-max-desktop">
+          <div class="columns is-centered">
+            <div class="column has-text-centered">
+              <h1 class="title is-1 publication-title">
+                Watch, Learn, Assist: Unlocking Autonomous Prosthetic Manipulation via Imitation Learning
+              </h1>
+
+              <div class="is-size-5 publication-authors">
+                <span class="author-block"><a href="https://malcol123.github.io/" target="_blank" rel="noopener">Martina Columbaro<sup>1,3</sup></a>,</span>
+                <span class="author-block"><a href="https://federicovasile1.github.io/" target="_blank" rel="noopener">Federico Vasile<sup>1</sup></a>,</span>
+                <span class="author-block"><a href="https://www.iit.it/it/people-profile/-/people/nicolo-boccardo" target="_blank" rel="noopener">Nicolò Boccardo<sup>2</sup></a>,</span>
+                <span class="author-block"><a href="https://www.iit.it/it/people-profile/-/people/lorenzo-natale" target="_blank" rel="noopener">Lorenzo Natale<sup>1</sup></a></span>
+              </div>
+
+              <div class="is-size-6 publication-authors publication-affiliations">
+                <span class="author-block"><sup>1</sup>Humanoid Sensing and Perception, Istituto Italiano di Tecnologia</span><br>
+                <span class="author-block"><sup>2</sup>Rehab Technologies Lab, Istituto Italiano di Tecnologia</span><br>
+                <span class="author-block"><sup>3</sup>DIBRIS, University of Genoa</span>
+              </div>
+
+              <div class="is-size-5 publication-venue">
+                Submitted to IEEE TNSRE
+                <span class="review-status">Under review</span>
+              </div>
+
+              <div class="column has-text-centered">
+                <!-- [MODIFIED] Original resource links replaced by three unavailable resources with visible status labels. -->
+                <div class="publication-links" aria-label="Paper resources">
+                  <span class="link-block coming-soon-wrap">
+                    <span class="external-link button is-normal is-rounded is-dark unavailable" aria-disabled="true">
+                      <span class="icon" aria-hidden="true"><i class="ai ai-arxiv"></i></span>
+                      <span>arXiv</span>
+                    </span>
+                    <span class="coming-soon">Coming soon</span>
+                  </span>
+
+                  <span class="link-block coming-soon-wrap">
+                    <span class="external-link button is-normal is-rounded is-dark unavailable" aria-disabled="true">
+                      <span class="icon" aria-hidden="true"><i class="fas fa-file-pdf"></i></span>
+                      <span>Paper</span>
+                    </span>
+                    <span class="coming-soon">Coming soon</span>
+                  </span>
+
+                  <span class="link-block coming-soon-wrap">
+                    <span class="external-link button is-normal is-rounded is-dark unavailable" aria-disabled="true">
+                      <!-- [MODIFIED] Supplementary will be a video, so the PDF icon was replaced by a play icon. -->
+                      <span class="icon" aria-hidden="true"><i class="fas fa-play"></i></span>
+                      <span>Supplementary</span>
+                    </span>
+                    <span class="coming-soon">Coming soon</span>
+                  </span>
+
+                  <!--
+                    [DISABLED FOR NOW] Optional buttons from the base template.
+                    Restore only when the corresponding files or URLs exist.
+
+                    <span class="link-block">
+                      <a href="static/pdfs/supplementary_material.pdf" target="_blank"
+                         class="external-link button is-normal is-rounded is-dark">
+                        <span>Supplementary</span>
+                      </a>
+                    </span>
+
+                    <span class="link-block">
+                      <a href="https://github.com/YOUR_REPOSITORY" target="_blank"
+                         class="external-link button is-normal is-rounded is-dark">
+                        <span>Code</span>
+                      </a>
+                    </span>
+                  -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- [MODIFIED] Template teaser replaced with the prosthesis demonstration video. -->
+    <section class="hero teaser">
+      <div class="container is-max-desktop">
+        <div class="hero-body">
+          <video poster="static/images/video-poster.jpg" id="teaser" autoplay controls muted loop playsinline height="100%" preload="metadata">
+            <source src="static/videos/tnsre-actions.mp4" type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            Autonomous prosthetic execution of pick-and-place and pouring tasks.
+          </h2>
+        </div>
+      </div>
+    </section>
+    <!-- End teaser video -->
+    
+    <!-- [MODIFIED] Placeholder abstract replaced with the manuscript abstract. -->
+    <section class="section hero is-light" id="abstract">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+            <h2 class="title is-3">Abstract</h2>
+            <div class="content has-text-justified">
+              <p>
+                Object grasping and manipulation with a prosthetic hand remain challenging for individuals with transradial limb loss, particularly when multiple prosthetic degrees of freedom must be coordinated. We present a framework for autonomous control of a prosthetic hand during grasping and manipulation tasks. Our approach leverages imitation learning to train a control policy that generates motor commands from egocentric images, eye-in-hand images and prosthetic proprioception. The user guides the hand through the workspace, while the policy autonomously controls the degrees of freedom required to complete the task. We collect demonstrations for five object-action combinations and evaluate the policy with 20 able-bodied participants. Across the evaluated tasks, the system achieves task-completion rates between 78.5% and 97%, with progressive success rates between 92.38% and 98.80%.
+              </p>
+            </div>
+            <p class="tldr">
+              <b>TL;DR:</b> We train a single multimodal imitation-learning policy to autonomously control the wrist and fingers of the Hannes prosthetic hand during grasping and manipulation.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End paper abstract -->
+     
+   
+    <!-- [ADDED] Project-specific Watch / Learn / Assist explanation. -->
+    <section class="section" id="approach">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+            <h2 class="title is-3">How it works</h2>
+          </div>
+        </div>
+
+        <div class="columns is-centered approach-columns">
+          <div class="column">
+            <article class="approach-step">
+              <!-- [MODIFIED] Number and title are paired on one centered line; the description remains justified below. -->
+              <div class="approach-heading">
+                <span class="step-number step-number-watch" aria-hidden="true">1</span>
+                <h3 class="title is-4">Watch</h3>
+              </div>
+              <p>The system watches demonstrations through an egocentric camera and an eye-in-hand camera while also recording prosthetic proprioception and 3&#8209;DoF commands.</p>
+            </article>
+          </div>
+          <div class="column">
+            <article class="approach-step">
+              <div class="approach-heading">
+                <span class="step-number step-number-learn" aria-hidden="true">2</span>
+                <h3 class="title is-4">Learn</h3>
+              </div>
+              <p>A multimodal diffusion policy learns from the synchronized demonstrations to predict future wrist and finger commands.</p>
+            </article>
+          </div>
+          <div class="column">
+            <article class="approach-step">
+              <div class="approach-heading">
+                <span class="step-number step-number-assist" aria-hidden="true">3</span>
+                <h3 class="title is-4">Assist</h3>
+              </div>
+              <p>The participant moves the prosthesis through space while the policy autonomously controls flexion-extension, pronation-supination and hand opening-closing.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End how it works -->
+    
+        <!-- [ADDED] framework overview from the paper's first figure. -->
+    <section class="section overview-section">
+      <div class="container is-max-desktop">
+        <figure class="paper-figure">
+          <a href="static/images/framework-overview.png" target="_blank" rel="noopener" aria-label="Open the framework overview at full size">
+            <img src="static/images/framework-overview.png" alt="Overview of data collection, training and experimental evaluation">
+          </a>
+          <figcaption>
+            Multimodal demonstrations combine egocentric vision, eye-in-hand vision and prosthetic proprioception to train a policy that predicts 3-DoF prosthetic commands.
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!--
+      [DISABLED FOR NOW] Detailed policy-architecture section.
+      This was intentionally not shown because the paper provides the full
+      technical architecture. It can be restored later with an architecture image.
+
+      <section class="section hero is-light" id="architecture">
+        <div class="container is-max-desktop">
+          <h2 class="title is-3 has-text-centered">Architecture</h2>
+          <figure class="paper-figure">
+            <img src="static/images/policy-architecture.png"
+                 alt="Architecture of the multimodal diffusion policy">
+          </figure>
+        </div>
+      </section>
+    -->
+
+    <!-- [MODIFIED] Results image retained; three interactive explanatory cards added. -->
+    <section class="section hero is-light" id="results">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+            <h2 class="title is-3">Results</h2>
+          </div>
+        </div>
+
+        <figure class="paper-figure results-figure">
+          <img src="static/images/success-results.png" alt="Binary and progressive success rates for five object-action combinations" loading="lazy">
+          <figcaption>Success rates across the five object-action combinations during the prosthesis condition.</figcaption>
+        </figure>
+
+        <div class="columns is-centered result-cards">
+          <div class="column">
+            <button class="flip-card" type="button" aria-pressed="false" aria-label="Learn more about the binary success rate">
+              <span class="flip-card-inner">
+                <span class="flip-card-face flip-card-front">
+                  <span2>Binary success rate</span2>
+                  <strong>78.5 – 97.0%</strong>
+                </span>
+                <span class="flip-card-face flip-card-back">
+                  <span><strong>SR</strong> counts a trial as successful only when the complete task is accomplished.</span>
+                </span>
+              </span>
+            </button>
+          </div>
+
+          <div class="column">
+            <button class="flip-card" type="button" aria-pressed="false" aria-label="Learn more about the progressive success rate">
+              <span class="flip-card-inner">
+                <span class="flip-card-face flip-card-front">
+                  <span2>Progressive success rate</span2>
+                  <strong>92.4 – 98.8%</strong>
+                </span>
+                <span class="flip-card-face flip-card-back">
+                  <span><strong>PSR</strong> gives partial credit for intermediate stages completed when a trial does not reach the final step.</span>
+                </span>
+              </span>
+            </button>
+          </div>
+
+          <div class="column">
+            <button class="flip-card" type="button" aria-pressed="false" aria-label="Learn more about the study participants">
+              <span class="flip-card-inner">
+                <span class="flip-card-face flip-card-front">
+                  <span2>Able-bodied participants</span2>
+                  <strong>20</strong>
+                </span>
+                <span class="flip-card-face flip-card-back">
+                  <span>All participants gave informed consent*. Each performed 10 repetitions of all 5 object-action combinations.</span>
+                  <span_mini>
+                  
+                  *The study followed the Declaration of Helsinki and was approved by the Ethical Committee of Liguria Region (363/2022; DB ID 12494).
+                  </span_mini>
+                </span>
+              </span>
+            </button>
+          </div>
+        </div>
+        <p class="interaction-hint has-text-centered">Hover, focus or tap a card to learn more.</p>
+      </div>
+    </section>
+    <!-- End results -->
+
+    <!--
+      [DISABLED FOR NOW] Original image carousel.
+      Required before restoring:
+      - static/css/bulma-carousel.min.css
+      - static/js/bulma-carousel.min.js
+      - the carousel images listed below
+
+      <section class="hero is-small" id="image-carousel">
+        <div class="hero-body">
+          <div class="container">
+            <div class="carousel results-carousel">
+              <div class="item">
+                <img src="static/images/carousel1.jpg" alt="First research result">
+                <h2 class="subtitle has-text-centered">First image description.</h2>
+              </div>
+              <div class="item">
+                <img src="static/images/carousel2.jpg" alt="Second research result">
+                <h2 class="subtitle has-text-centered">Second image description.</h2>
+              </div>
+              <div class="item">
+                <img src="static/images/carousel3.jpg" alt="Third research result">
+                <h2 class="subtitle has-text-centered">Third image description.</h2>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    -->
+
+    <!--
+      [DISABLED FOR NOW] Original YouTube presentation block.
+      Replace YOUTUBE_VIDEO_ID before restoring.
+
+      <section class="hero is-small is-light" id="video-presentation">
+        <div class="hero-body">
+          <div class="container">
+            <h2 class="title is-3">Video Presentation</h2>
+            <div class="columns is-centered has-text-centered">
+              <div class="column is-four-fifths">
+                <div class="publication-video">
+                  <iframe
+                    src="https://www.youtube.com/embed/YOUTUBE_VIDEO_ID"
+                    title="Video presentation"
+                    allow="autoplay; encrypted-media"
+                    allowfullscreen>
+                  </iframe>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    -->
+
+    <!--
+      [DISABLED FOR NOW] Original video carousel.
+      Required before restoring:
+      - static/css/bulma-carousel.min.css
+      - static/js/bulma-carousel.min.js
+      - static/videos/carousel1.mp4, carousel2.mp4 and carousel3.mp4
+
+      <section class="hero is-small" id="video-carousel">
+        <div class="hero-body">
+          <div class="container">
+            <h2 class="title is-3">Additional Videos</h2>
+            <div class="carousel results-carousel">
+              <div class="item"><video controls muted loop><source src="static/videos/carousel1.mp4" type="video/mp4"></video></div>
+              <div class="item"><video controls muted loop><source src="static/videos/carousel2.mp4" type="video/mp4"></video></div>
+              <div class="item"><video controls muted loop><source src="static/videos/carousel3.mp4" type="video/mp4"></video></div>
+            </div>
+          </div>
+        </div>
+      </section>
+    -->
+
+    <!--
+      [DISABLED FOR NOW] Original PDF poster block.
+      Add the final poster at static/pdfs/poster.pdf before restoring.
+
+      <section class="hero is-small is-light" id="poster">
+        <div class="hero-body">
+          <div class="container">
+            <h2 class="title">Poster</h2>
+            <iframe src="static/pdfs/poster.pdf" title="Research poster" width="100%" height="550"></iframe>
+          </div>
+        </div>
+      </section>
+    -->
+
+    <!-- [MODIFIED] Generic citation replaced with a temporary manuscript citation. -->
+    <section class="section" id="BibTeX">
+      <div class="container is-max-desktop content">
+        <div class="bibtex-header">
+          <h2 class="title">BibTeX</h2>
+          <button class="button is-small copy-bibtex-btn" type="button" data-copy-bibtex title="Copy BibTeX to clipboard">
+            <span class="copy-text">Copy</span>
+          </button>
+        </div>
+        <pre id="bibtex-code"><code>@unpublished{columbaro2026watch,
+  title  = {Watch, Learn, Assist: Unlocking Autonomous
+            Prosthetic Manipulation via Imitation Learning},
+  author = {Columbaro, Martina and Vasile, Federico and
+            Boccardo, Nicolò and Natale, Lorenzo},
+  note   = {Manuscript submitted to IEEE Transactions on Neural
+            Systems and Rehabilitation Engineering; under review},
+  year   = {2026}
+}</code></pre>
+      </div>
+    </section>
+    <!-- End BibTeX citation -->
+  </main>
+
+  <!-- [MODIFIED] Original attribution retained; review status removed and last-update date added. -->
+  <footer class="footer">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content has-text-centered footer-content">
+            <p class="last-update">Last updated: October 2026</p>
+            <p>
+              This page was built using the
+              <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank" rel="noopener">Academic Project Page Template</a>,
+              which was adopted from the <a href="https://nerfies.github.io" target="_blank" rel="noopener">Nerfies</a> project page.
+              You are free to borrow the source code of this website; we just ask that you link back to this page in the footer.<br>
+              This website is licensed under a
+              <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+  <!--
+    [DISABLED FOR NOW] Analytics / Statcounter.
+    Add a privacy-reviewed tracking snippet here only if traffic analytics are needed.
+  -->
+
+</body>
+</html>
